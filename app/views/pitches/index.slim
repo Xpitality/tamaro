@@ -1,0 +1,73 @@
+.container-fluid.page__heading-container
+  .page__heading
+    h1.m-0 = "Pitches"
+
+    = form_tag import_pitches_path, multipart: true, class: '' do
+      = file_field_tag :file, class: :file
+      = submit_tag
+
+.container-fluid.page__container
+  .table-responsive data-toggle="lists"
+    table.table.thead-border-top-0
+      thead
+        tr
+          th = "No"
+          th = "Zone"
+          th
+          th.text-nowrap = "width x length"
+          th
+          th = "max_persons"
+          th
+      tbody.list
+        - @pitches.each do |pitch|
+          tr
+            td = pitch.pitch_number
+            td.text-nowrap
+              strong = pitch.zone.name
+            td style="min-width: 230px;"
+              = "caravan_and_car:"
+              .float-right = pitch.caravan_and_car
+              br
+              = "camper:"
+              .float-right = pitch.camper
+              br
+              = "tent_and_car:"
+              .float-right = pitch.tent_and_car
+              br
+              = "small_tent:"
+              .float-right = pitch.small_tent
+              br
+              = "small_tent_and_car:"
+              .float-right = pitch.small_tent_and_car
+              br
+              = "vehicle:"
+              .float-right = pitch.vehicle
+            td.text-nowrap
+              = pitch.width
+              = " x "
+              = pitch.length
+            td style="min-width: 150px;"
+              = "electricity:"
+              .float-right = pitch.electricity
+              br
+              = "internet:"
+              .float-right = pitch.internet
+              br
+              = "tv:"
+              .float-right = pitch.tv
+              br
+              = "sewage:"
+              .float-right = pitch.sewage
+              br
+              = "freshwater:"
+              .float-right = pitch.freshwater
+            td = pitch.max_persons
+            td
+              = "lake_distance:"
+              .float-right = pitch.lake_distance
+              br
+              = "sanitary_distance:"
+              .float-right = pitch.sanitary_distance
+              br
+              = "playground_distance:"
+              .float-right = pitch.playground_distance
