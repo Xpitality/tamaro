@@ -4,7 +4,7 @@
 
     = form_tag import_pitches_path, multipart: true, class: '' do
       = file_field_tag :file, class: :file
-      = submit_tag
+      = submit_tag 'Import CSV'
 
 .container-fluid.page__container
   .table-responsive data-toggle="lists"

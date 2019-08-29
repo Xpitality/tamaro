@@ -13,6 +13,6 @@ class Zone < ApplicationRecord
   SEASONS = {"BASSA STAGIONE" => "low", "MEDIA STAGIONE" => "middle", "ESTATE" => "high"}
 
   has_many :pitches
-  has_many :season_prices
+  has_many :zone_translations, dependent: :destroy
 
 end

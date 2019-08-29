@@ -13,21 +13,21 @@
               table
                 thead
                   tr
-                    th = "season"
-                    th = "price1"
-                    th = "price2"
-                    th = "price3"
-                    th = "price4"
-                    th = "price5"
-                    th
+                    th = 'Italian'
+                    th = 'English'
+                    th = 'German'
                 tbody
-                  - zone.season_prices.each do |sp|
-                    = simple_form_for sp, remote:true do |f|
-                      tr
-                        td = sp.season
-                        td = f.input :price1, label: false, input_html: { style: 'width: 80px;', lang: 'it', step: "0.01"}
-                        td = f.input :price2, label: false, input_html: { style: 'width: 80px;', lang: 'it', step: "0.01"}
-                        td = f.input :price3, label: false, input_html: { style: 'width: 80px;', lang: 'it', step: "0.01"}
-                        td = f.input :price4, label: false, input_html: { style: 'width: 80px;', lang: 'it', step: "0.01"}
-                        td = f.input :price5, label: false, input_html: { style: 'width: 80px;', lang: 'it', step: "0.01"}
-                        td = f.submit 'update'
+                  tr
+                    - [:it, :en, :de].each do |zone_locale|
+                      td
+                        - zone_translation = zone.zone_translations.where(locale: zone_locale).first
+                        = simple_form_for zone_translation, remote:true, wrapper: :vertical_form do |f|
+                          = f.input :name
+                          br
+                          = f.input :description
+                          br
+                          = f.input :price
+                          br
+                          = f.input :price_table
+                          br
+                          = f.submit 'update'

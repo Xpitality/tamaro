@@ -31,22 +31,22 @@ class PitchesController < AdminController
             freshwater: pitch_hash["freshwater"] == "1"
         }
 
-        if pitch
-          pitch.update attributes
+        zones = {}
+        if zones[pitch_hash['zone'].strip]
+          zone = zones[pitch_hash['zone'].strip]
         else
-          zones = {}
-          if zones[pitch_hash['zone'].strip]
-            zone = zones[pitch_hash['zone'].strip]
-          else
-            zone = Zone.where(name: pitch_hash['zone'].strip).first
-            unless zone
-              zone = Zone.create(name: pitch_hash['zone'].strip)
-              Zone::SEASONS.keys.each do |season|
-                zone.season_prices.create season: Zone::SEASONS[season]
-              end
+          zone = Zone.where(name: pitch_hash['zone'].strip).first
+          unless zone
+            zone = Zone.create(name: pitch_hash['zone'].strip)
+            [:it, :de, :en].each do |zone_locale|
+              zone.zone_translations.create(locale: zone_locale, name: pitch_hash['zone'].strip)
             end
           end
+        end
 
+        if pitch
+          pitch.update attributes.merge({pitch_number: pitch_hash['pitch_number'].to_i, zone_id: zone.id})
+        else
           Pitch.create attributes.merge({pitch_number: pitch_hash['pitch_number'].to_i, zone_id: zone.id})
         end
       end

@@ -1,0 +1,2 @@
+class ZoneTranslationsController < ApplicationController
+end

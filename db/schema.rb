@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_110224) do
+ActiveRecord::Schema.define(version: 2019_08_29_131411) do
 
   create_table "pitches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "zone_id"
@@ -37,19 +37,6 @@ ActiveRecord::Schema.define(version: 2019_08_27_110224) do
     t.index ["zone_id"], name: "index_pitches_on_zone_id"
   end
 
-  create_table "season_prices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "zone_id"
-    t.string "season"
-    t.float "price1"
-    t.float "price2"
-    t.float "price3"
-    t.float "price4"
-    t.float "price5"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["zone_id"], name: "index_season_prices_on_zone_id"
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -62,6 +49,18 @@ ActiveRecord::Schema.define(version: 2019_08_27_110224) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "zone_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "zone_id"
+    t.string "locale"
+    t.string "name"
+    t.text "description"
+    t.text "price"
+    t.text "price_table"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["zone_id"], name: "index_zone_translations_on_zone_id"
+  end
+
   create_table "zones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -69,5 +68,5 @@ ActiveRecord::Schema.define(version: 2019_08_27_110224) do
   end
 
   add_foreign_key "pitches", "zones"
-  add_foreign_key "season_prices", "zones"
+  add_foreign_key "zone_translations", "zones"
 end

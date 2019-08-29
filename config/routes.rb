@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :zone_translations
   resources :pitches, only: :index do
     post :import, on: :collection
   end
