@@ -18,7 +18,7 @@
                     th = 'German'
                 tbody
                   tr
-                    - [:it, :en, :de].each do |zone_locale|
+                    - ZoneTranslation::LOCALES.each do |zone_locale|
                       td
                         - zone_translation = zone.zone_translations.where(locale: zone_locale).first
                         = simple_form_for zone_translation, remote:true, wrapper: :vertical_form do |f|

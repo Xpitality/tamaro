@@ -2,6 +2,8 @@ require 'csv'
 
 class PitchesController < AdminController
 
+  skip_before_action :authenticate_user!, only: [:export]
+
   def index
     @pitches = Pitch.all
   end
@@ -53,5 +55,10 @@ class PitchesController < AdminController
     end
 
     redirect_to pitches_path
+  end
+
+  def export
+    @pitches = Pitch.all
+    @zones = Zone.includes(:zone_translations)
   end
 end
