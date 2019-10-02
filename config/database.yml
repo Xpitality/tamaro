@@ -21,6 +21,6 @@ test:
 production:
   <<: *default
   database: tamaro
-  username: Rails.application.credentials.db[:username]
-  password: Rails.application.credentials.db[:password]
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
   host: "db.xpitality.com"
