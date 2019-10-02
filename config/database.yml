@@ -1,0 +1,26 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+
+development:
+  <<: *default
+  database: tamaro_dev
+  username: tamaro
+  password: tamaro
+  host: localhost
+
+test:
+  <<: *default
+  database: tamaro_test
+  username: tamaro
+  password:
+  host: localhost
+
+production:
+  <<: *default
+  database: tamaro
+  username: Rails.application.credentials.db[:username]
+  password: Rails.application.credentials.db[:password]
+  host: "db.xpitality.com"
