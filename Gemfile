@@ -32,7 +32,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 #gem 'bootstrap-sass'
 #
 
-gem 'devise'
+gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'mysql2', '~> 0.4.4'
