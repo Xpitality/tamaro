@@ -20,9 +20,10 @@ if Rails.env.development?
   end
 end
 if Rails.env.production?
-  Rails.application.config.middleware.insert_before 0, "Rack::Cors" do
+  Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
-      origins /https*:\/\/campingtamaro\.ch/
+      # origins /https*:\/\/campingtamaro\.ch/
+      origins '*'
       resource '/pitches/export.json', headers: :any, methods: :get
     end
   end
