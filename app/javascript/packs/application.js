@@ -16,13 +16,11 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import '../stylesheets/application'
-import './bootstrap_custom.js'
-
 //** CORE
 // require("jquery/dist/jquery.min.js");
-require("popper.js/dist/umd/popper.js");
+// require("popper.js/dist/umd/popper.js");
 // require bootstrap/dist/js/bootstrap.min.js
+require("bootstrap/dist/js/bootstrap")
 
 require("simplebar/dist/simplebar.min.js");
 

@@ -10,15 +10,15 @@
     "jquery": "^3.4.1",
     "npm": "^6.11.2",
     "popper.js": "^1.15.0",
-    "turbolinks": "^5.2.0"
-  },
-  "version": "0.1.0",
-  "devDependencies": {
+    "turbolinks": "^5.2.0",
     "dom-factory": "1.0.0",
     "material-design-icons-iconfont": "^3.0.3",
     "material-design-kit": "^1.0.0-alpha.24",
     "sidebar-style-guide": "^2.0.0",
-    "simplebar": "^3.1.1",
-    "webpack-dev-server": "^3.8.0"
+    "simplebar": "^3.1.1"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.8.2"
   }
 }
