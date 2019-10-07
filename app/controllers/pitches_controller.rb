@@ -33,7 +33,6 @@ class PitchesController < AdminController
             freshwater: pitch_hash["freshwater"] == "1"
         }
 
-
         zones = {}
         if zones[pitch_hash['zone'].strip]
           zone = zones[pitch_hash['zone'].strip]
