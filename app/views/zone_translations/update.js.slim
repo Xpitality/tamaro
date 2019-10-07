@@ -3,7 +3,8 @@
 
 - if @zone_translation.valid?
   |
-    $zoneTranslationForm.css('border', '1px solid green');
+    $zoneTranslationForm.find('.update-btn').removeClass('btn-primary').addClass('btn-success');
+    setTimeout(function(){ $zoneTranslationForm.find('.update-btn').removeClass('btn-success').addClass('btn-primary'); }, 3000);
 - else
   |
-    $zoneTranslationForm.css('border', '1px solid red');
+    $zoneTranslationForm.find('.update-btn').removeClass('btn-primary').addClass('btn-danger');
