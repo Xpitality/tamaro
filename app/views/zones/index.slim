@@ -8,26 +8,26 @@
       tbody.list
         - @zones.each do |zone|
           tr
-            td = zone.name
             td
-              table
-                thead
-                  tr
-                    th = 'Italian'
-                    th = 'English'
-                    th = 'German'
-                tbody
-                  tr
-                    - ZoneTranslation::LOCALES.each do |zone_locale|
-                      td
-                        - zone_translation = zone.zone_translations.where(locale: zone_locale).first
-                        = simple_form_for zone_translation, remote:true, wrapper: :vertical_form do |f|
-                          = f.input :name
-                          br
-                          = f.input :description
-                          br
-                          = f.input :price
-                          br
-                          = f.input :price_table, input_html: { class: 'rich-text' }
-                          br
-                          = f.submit 'update'
+              h4 = zone.name
+              ul.nav.nav-tabs id="zone_tabs_#{zone.id}" role="tablist"
+                - ZoneTranslation::LOCALES.each do |zone_locale|
+                  li.nav-item
+                    - zone_translation_active = zone_locale == ZoneTranslation::LOCALES.first
+                    a.nav-link class=('active' if zone_translation_active) id="#{zone_locale}-#{zone.id}-tab" data-toggle="tab" role="tab" href="##{zone_locale}-#{zone.id}" aria-controls="home" aria-selected="#{zone_translation_active}" = t("language_name.#{zone_locale}")
+
+              .tab-content id="tabContent#{zone.id}"
+                - ZoneTranslation::LOCALES.each do |zone_locale|
+                  - zone_translation_active = zone_locale == ZoneTranslation::LOCALES.first
+                  .tab-pane.fade class=('show active' if zone_translation_active) id="#{zone_locale}-#{zone.id}" role="tabpanel" aria-labelledby="#{zone_locale}-#{zone.id}-tab"
+                    - zone_translation = zone.zone_translations.where(locale: zone_locale).first
+                    = simple_form_for zone_translation, remote: true, wrapper: :vertical_form do |f|
+                      = f.input :name
+                      br
+                      = f.input :description
+                      br
+                      = f.input :price
+                      br
+                      = f.input :price_table, input_html: { class: 'rich-text' }
+                      br
+                      = f.submit 'update'
