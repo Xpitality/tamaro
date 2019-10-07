@@ -1,0 +1,9 @@
+|
+  $zoneTranslationForm = $("form#edit_zone_translation_#{@zone_translation.id}");
+
+- if @zone_translation.valid?
+  |
+    $zoneTranslationForm.css('border', '1px solid green');
+- else
+  |
+    $zoneTranslationForm.css('border', '1px solid red');
