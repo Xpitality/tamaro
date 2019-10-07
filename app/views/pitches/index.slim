@@ -13,11 +13,11 @@
         tr
           th = t('pitches.table.header.pitch_number')
           th = t('pitches.table.header.zone')
-          th
+          th = t('pitches.table.header.type')
           th.text-nowrap = t('pitches.table.header.width_length')
-          th
+          th = t('pitches.table.header.utility')
           th = t('pitches.table.header.max_persons')
-          th
+          th = t('pitches.table.header.location')
       tbody.list
         - @pitches.each do |pitch|
           tr
