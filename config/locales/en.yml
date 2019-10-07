@@ -30,6 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord_attributes: &activerecord_attributes
+    zone_translation:
+      name: Name
+      description: Description
+      price: Price
+      price_table: Price table
   language_name:
     it: Italian
     en: English
@@ -68,3 +74,19 @@ en:
     menu: "Menu"
     pitches: "Pitches"
     zones: "Zones"
+  activerecord:
+    attributes:
+      <<: *activerecord_attributes
+    models:
+      pitch:
+        one: Pitch
+        other: Pitches
+      zone:
+        one: Zone
+        other: Zones
+      zone_translation:
+        one: Zone translation
+        other: Zone translations
+  helpers:
+    label:
+      <<: *activerecord_attributes

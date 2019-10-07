@@ -20,14 +20,12 @@
                 - ZoneTranslation::LOCALES.each do |zone_locale|
                   - zone_translation_active = zone_locale == ZoneTranslation::LOCALES.first
                   .tab-pane.fade class=('show active' if zone_translation_active) id="#{zone_locale}-#{zone.id}" role="tabpanel" aria-labelledby="#{zone_locale}-#{zone.id}-tab"
+                    br
                     - zone_translation = zone.zone_translations.where(locale: zone_locale).first
                     = simple_form_for zone_translation, remote: true, wrapper: :vertical_form do |f|
                       = f.input :name
-                      br
                       = f.input :description
-                      br
                       = f.input :price
-                      br
                       = f.input :price_table, input_html: { class: 'rich-text' }
-                      br
                       = f.button :submit, 'Update', class: 'btn btn-primary update-btn'
+                    br
