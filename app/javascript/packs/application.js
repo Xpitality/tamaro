@@ -7,24 +7,16 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
-
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
-
-//** CORE
-// require("jquery/dist/jquery.min.js");
-// require("popper.js/dist/umd/popper.js");
-// require bootstrap/dist/js/bootstrap.min.js
+var jQuery = require("jquery")
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
 require("bootstrap/dist/js/bootstrap")
-
 require("simplebar/dist/simplebar.min.js");
-
 require("material-design-kit/dist/material-design-kit.js");
+import "../redactor/redactor";
+import "../redactor/plugins/table/table";
+import "../redactor/plugins/inlinestyle/inlinestyle";
+import "../redactor/plugins/properties/properties";
 
 // Self Initialize DOM Factory Components
 var handler = require("dom-factory/dist/dom-factory.js").handler.autoInit();
@@ -59,5 +51,9 @@ drawers.forEach((drawer) => {
 })
 
 
-// ENABLE TOOLTIPS
-$('[data-toggle="tooltip"]').tooltip()
+// ENABLE TOOLTIPS, POPOVER, REDACTOR
+document.addEventListener("turbolinks:load", () => {
+  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="popover"]').popover()
+  $R('.rich-text', { focus: true, plugins: ['table', 'inlinestyle', 'properties'] })
+})
