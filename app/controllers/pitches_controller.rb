@@ -9,7 +9,7 @@ class PitchesController < AdminController
   end
 
   def import
-    CSV.foreach(params['file'].path, headers: true) do |row|
+    CSV.foreach(params['file'].path, {headers: true, col_sep: ';'}) do |row|
       pitch_hash = row.to_h
       if pitch_hash['pitch_number'].to_i > 0
         pitch = Pitch.where(pitch_number: pitch_hash['pitch_number']).first
