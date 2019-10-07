@@ -1,22 +1,22 @@
 .container-fluid.page__heading-container
   .page__heading
-    h1.m-0 = "Pitches"
+    h1.m-0 = t('pitches.title')
 
     = form_tag import_pitches_path, multipart: true, class: '' do
       = file_field_tag :file, class: :file
-      = submit_tag 'Import CSV'
+      = submit_tag t('pitches.import_csv')
 
 .container-fluid.page__container
   .table-responsive data-toggle="lists"
     table.table.thead-border-top-0
       thead
         tr
-          th = "No"
-          th = "Zone"
+          th = t('pitches.table.header.pitch_number')
+          th = t('pitches.table.header.zone')
           th
-          th.text-nowrap = "width x length"
+          th.text-nowrap = t('pitches.table.header.width_length')
           th
-          th = "max_persons"
+          th = t('pitches.table.header.max_persons')
           th
       tbody.list
         - @pitches.each do |pitch|
@@ -25,49 +25,49 @@
             td.text-nowrap
               strong = pitch.zone.name
             td style="min-width: 230px;"
-              = "caravan_and_car:"
-              .float-right = pitch.caravan_and_car
+              = t('pitches.table.property.caravan_and_car')
+              .float-right = pitch.caravan_and_car ? t('shared.yes') : t('shared.no')
               br
-              = "camper:"
-              .float-right = pitch.camper
+              = t('pitches.table.property.camper')
+              .float-right = pitch.camper ? t('shared.yes') : t('shared.no')
               br
-              = "tent_and_car:"
-              .float-right = pitch.tent_and_car
+              = t('pitches.table.property.tent_and_car')
+              .float-right = pitch.tent_and_car ? t('shared.yes') : t('shared.no')
               br
-              = "small_tent:"
-              .float-right = pitch.small_tent
+              = t('pitches.table.property.small_tent')
+              .float-right = pitch.small_tent ? t('shared.yes') : t('shared.no')
               br
-              = "small_tent_and_car:"
-              .float-right = pitch.small_tent_and_car
+              = t('pitches.table.property.small_tent_and_car')
+              .float-right = pitch.small_tent_and_car ? t('shared.yes') : t('shared.no')
               br
-              = "vehicle:"
-              .float-right = pitch.vehicle
+              = t('pitches.table.property.vehicle')
+              .float-right = pitch.vehicle ? t('shared.yes') : t('shared.no')
             td.text-nowrap
               = pitch.width
               = " x "
               = pitch.length
             td style="min-width: 150px;"
-              = "electricity:"
-              .float-right = pitch.electricity
+              = t('pitches.table.property.electricity')
+              .float-right = pitch.electricity ? t('shared.yes') : t('shared.no')
               br
-              = "internet:"
-              .float-right = pitch.internet
+              = t('pitches.table.property.internet')
+              .float-right = pitch.internet ? t('shared.yes') : t('shared.no')
               br
-              = "tv:"
-              .float-right = pitch.tv
+              = t('pitches.table.property.tv')
+              .float-right = pitch.tv ? t('shared.yes') : t('shared.no')
               br
-              = "sewage:"
-              .float-right = pitch.sewage
+              = t('pitches.table.property.sewage')
+              .float-right = pitch.sewage ? t('shared.yes') : t('shared.no')
               br
-              = "freshwater:"
-              .float-right = pitch.freshwater
+              = t('pitches.table.property.freshwater')
+              .float-right = pitch.freshwater ? t('shared.yes') : t('shared.no')
             td = pitch.max_persons
             td
-              = "lake_distance:"
-              .float-right = pitch.lake_distance
+              = t('pitches.table.property.lake_distance')
+              .float-right = pitch.lake_distance ? t('shared.yes') : t('shared.no')
               br
-              = "sanitary_distance:"
-              .float-right = pitch.sanitary_distance
+              = t('pitches.table.property.sanitary_distance')
+              .float-right = pitch.sanitary_distance ? t('shared.yes') : t('shared.no')
               br
-              = "playground_distance:"
-              .float-right = pitch.playground_distance
+              = t('pitches.table.property.playground_distance')
+              .float-right = pitch.playground_distance ? t('shared.yes') : t('shared.no')

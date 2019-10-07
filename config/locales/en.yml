@@ -30,7 +30,41 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  shared:
+    yes: "yes"
+    no: "no"
   language_name:
     it: Italian
     en: English
     de: German
+  pitches:
+    table:
+      header:
+        pitch_number: "#"
+        zone: "Zone"
+        width_length: "W x L"
+        max_persons: "max per."
+      property:
+        electricity: "electricity:"
+        internet: "internet:"
+        tv: "tv:"
+        sewage: "sewage:"
+        freshwater: "freshwater:"
+        lake_distance: "lake distance:"
+        sanitary_distance: "sanitary distance:"
+        playground_distance: "playground distance:"
+        caravan_and_car: "caravan and car:"
+        camper: "camper:"
+        tent_and_car: "tent_and_car:"
+        small_tent: "small_tent:"
+        small_tent_and_car: "small_tent_and_car:"
+        vehicle: "vehicle:"
+
+    title: "Pitches"
+    import_csv: "Import CSV"
+  zones:
+    title: "Zones"
+  sidebar:
+    menu: "Menu"
+    pitches: "Pitches"
+    zones: "Zones"
