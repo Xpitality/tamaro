@@ -25,49 +25,50 @@
             td.text-nowrap
               strong = pitch.zone.name
             td style="min-width: 230px;"
+              span.boolean = pitch.caravan_and_car ? "✓" : "✗"
               = t('pitches.table.property.caravan_and_car')
-              .float-right = pitch.caravan_and_car ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.camper ? "✓" : "✗"
               = t('pitches.table.property.camper')
-              .float-right = pitch.camper ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.tent_and_car ? "✓" : "✗"
               = t('pitches.table.property.tent_and_car')
-              .float-right = pitch.tent_and_car ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.small_tent ? "✓" : "✗"
               = t('pitches.table.property.small_tent')
-              .float-right = pitch.small_tent ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.small_tent_and_car ? "✓" : "✗"
               = t('pitches.table.property.small_tent_and_car')
-              .float-right = pitch.small_tent_and_car ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.vehicle ? "✓" : "✗"
               = t('pitches.table.property.vehicle')
-              .float-right = pitch.vehicle ? t('shared.yes') : t('shared.no')
             td.text-nowrap
               = pitch.width
-              = " x "
+              = "×"
               = pitch.length
             td style="min-width: 150px;"
+              span.boolean = pitch.electricity ? "✓" : "✗"
               = t('pitches.table.property.electricity')
-              .float-right = pitch.electricity ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.internet ? "✓" : "✗"
               = t('pitches.table.property.internet')
-              .float-right = pitch.internet ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.tv ? "✓" : "✗"
               = t('pitches.table.property.tv')
-              .float-right = pitch.tv ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.sewage ? "✓" : "✗"
               = t('pitches.table.property.sewage')
-              .float-right = pitch.sewage ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.freshwater ? "✓" : "✗"
               = t('pitches.table.property.freshwater')
-              .float-right = pitch.freshwater ? t('shared.yes') : t('shared.no')
             td = pitch.max_persons
             td
+              span.boolean = pitch.lake_distance ? "✓" : "✗"
               = t('pitches.table.property.lake_distance')
-              .float-right = pitch.lake_distance ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.sanitary_distance ? "✓" : "✗"
               = t('pitches.table.property.sanitary_distance')
-              .float-right = pitch.sanitary_distance ? t('shared.yes') : t('shared.no')
               br
+              span.boolean = pitch.playground_distance ? "✓" : "✗"
               = t('pitches.table.property.playground_distance')
-              .float-right = pitch.playground_distance ? t('shared.yes') : t('shared.no')
+
