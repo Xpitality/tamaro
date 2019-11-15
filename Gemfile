@@ -41,7 +41,7 @@ gem 'slim-rails'
 gem 'annotate'
 gem 'bugsnag'
 gem 'xpitality-notifier', git: 'https://github.com/xpitality/xpitality-notifier', tag: 'v0.0.3'
-gem 'rack-cors', '~> 1.0', '>= 1.0.3'
+gem 'rack-cors', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
