@@ -26,11 +26,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 
 
-#gem 'rails-i18n', '~> 5.0.0'
-#gem 'uglifier', '>= 1.3.0'
-#gem 'jquery-rails'
-#gem 'bootstrap-sass'
-#
+gem 'rails-i18n', '~> 6.0.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'jquery-rails'
+gem 'bootstrap-sass'
+
 
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n'
