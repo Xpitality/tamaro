@@ -1,12 +1,13 @@
-@import "~bootstrap/scss/bootstrap";
+//@import "bootstrap/scss/bootstrap";
+@import "~bootstrap";
 
 //** CORE
 // Variables
 @import 'stack_theme/variables';
 // MDK
-@import '~material-design-kit/src/style';
+@import 'material-design-kit/src/style';
 // SIMPLEBAR (SCROLL)
-@import '~simplebar/dist/simplebar';
+@import 'simplebar/dist/simplebar';
 
 //** APP
 @import 'stack_theme/flexbox';
