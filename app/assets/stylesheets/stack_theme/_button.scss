@@ -6,6 +6,9 @@
   }
 }
 
+$yiq-text-dark:             $gray-900 !default;
+$yiq-text-light:            $white !default;
+
 @function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
   $r: red($color);
   $g: green($color);
