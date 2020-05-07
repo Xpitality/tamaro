@@ -21,6 +21,8 @@ $border-radius:               .25rem !default;
   }
 }
 
+// ---------------------------------------
+
 @function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
   @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
 }
