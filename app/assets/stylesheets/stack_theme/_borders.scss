@@ -21,11 +21,11 @@
 //  }
 //}
 
-// ---------------------------------------
+//@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+//  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+//}
 
-@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
-  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
-}
+// ---------------------------------------
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
