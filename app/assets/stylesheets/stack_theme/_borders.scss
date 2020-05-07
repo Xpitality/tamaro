@@ -1,12 +1,10 @@
-//$grid-breakpoints: (
-//        xs: 0,
-//        sm: 576px,
-//        md: 768px,
-//        lg: 992px,
-//        xl: 1200px
-//) !default;
-
-@import "bootstrap/scss/mixins";
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+) !default;
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
