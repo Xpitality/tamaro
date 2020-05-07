@@ -1,3 +1,3 @@
 //= link_tree ../images
-//= link ../stylesheets/stack_theme/_variables.scss
-//= link_directory ../stylesheets .css
+// link_directory ../stylesheets .css
+//= link ../stylesheets/application.css
