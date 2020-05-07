@@ -5014,12 +5014,12 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-material-design-icons-iconfont@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/material-design-icons-iconfont/-/material-design-icons-iconfont-3.0.3.tgz#154a1084047d4e27237fa7f5a37e1075ceea6df2"
-  integrity sha1-FUoQhAR9Ticjf6f1o34Qdc7qbfI=
+material-design-icons-iconfont@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/material-design-icons-iconfont/-/material-design-icons-iconfont-5.0.1.tgz#371875ed7fe9c8c520bc7123c3231feeab731c31"
+  integrity sha512-Xg6rIdGrfySTqiTZ6d+nQbcFepS6R4uKbJP0oAqyeZXJY/bX6mZDnOmmUJusqLXfhIwirs0c++a6JpqVa8RFvA==
 
-material-design-kit@^1.0.0-alpha.24:
+material-design-kit@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/material-design-kit/-/material-design-kit-1.0.2.tgz#20abe4fca0a3cf2dfe3a7683de87b903bf8c36c8"
   integrity sha512-jN2iwBHypaub3Z0X+9bUCkBgOFYcd8jXJhpZOwY4+2dPo3JSnkXljL6I7DadgCn3yUcbtE+sQ1/ONrdTEnf7Lg==
