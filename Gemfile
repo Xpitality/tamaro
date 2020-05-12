@@ -35,6 +35,8 @@ gem 'bugsnag'
 gem 'xpitality-notifier', git: 'https://github.com/xpitality/xpitality-notifier', tag: 'v0.0.3'
 gem 'rack-cors', '~> 1.0', '>= 1.0.3'
 
+gem 'mail-x_smtpapi'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

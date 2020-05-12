@@ -121,6 +121,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
+    mail-x_smtpapi (1.2.0)
+      mail (> 2.6.0)
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
@@ -264,6 +266,7 @@ DEPENDENCIES
   devise-i18n
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  mail-x_smtpapi
   mysql2 (~> 0.4.5)
   pry-byebug
   pry-rails
