@@ -284,8 +284,5 @@ DEPENDENCIES
   webpacker (~> 4.0)
   xpitality-notifier!
 
-RUBY VERSION
-   ruby 2.6.6p146
-
 BUNDLED WITH
    2.1.4
