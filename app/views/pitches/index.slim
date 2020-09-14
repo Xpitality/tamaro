@@ -63,12 +63,12 @@
               = t('pitches.table.property.freshwater')
             td = pitch.max_persons
             td
-              span.boolean = pitch.lake_distance ? "✓" : "✗"
+              span.boolean = pitch.lake_distance ? "#{pitch.lake_distance}m" : "✗"
               = t('pitches.table.property.lake_distance')
               br
-              span.boolean = pitch.sanitary_distance ? "✓" : "✗"
+              span.boolean = pitch.sanitary_distance ? "#{pitch.sanitary_distance}m" : "✗"
               = t('pitches.table.property.sanitary_distance')
               br
-              span.boolean = pitch.playground_distance ? "✓" : "✗"
+              span.boolean = pitch.playground_distance ? "#{pitch.playground_distance}m" : "✗"
               = t('pitches.table.property.playground_distance')
 
