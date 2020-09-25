@@ -5,7 +5,7 @@ class PitchesController < AdminController
   skip_before_action :authenticate_user!, only: [:export]
 
   def index
-    @pitches = Pitch.all
+    @pitches = Pitch.all.order('pitch_number ASC')
   end
 
   def import
@@ -51,7 +51,7 @@ class PitchesController < AdminController
         if pitch
           pitch.update attributes.merge({pitch_number: pitch_hash['pitch_number'].to_i, zone_id: zone.id})
         else
-          Pitch.create attributes.merge({pitch_number: pitch_hash['pitch_number'].to_i, zone_id: zone.id})
+          pitch = Pitch.create attributes.merge({pitch_number: pitch_hash['pitch_number'].to_i, zone_id: zone.id})
         end
       end
     end
