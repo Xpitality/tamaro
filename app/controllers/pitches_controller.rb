@@ -9,6 +9,8 @@ class PitchesController < AdminController
   end
 
   def import
+    redirect_to pitches_path unless params['file']
+
     CSV.foreach(params['file'].path, {headers: true, col_sep: ';'}) do |row|
       pitch_hash = row.to_h
       if pitch_hash['pitch_number'].to_i > 0
