@@ -60,7 +60,7 @@ class PitchesController < AdminController
   end
 
   def export
-    @pitches = Pitch.all
+    @pitches = Pitch.all.order('pitch_number ASC')
     @zones = Zone.includes(:zone_translations)
   end
 end
