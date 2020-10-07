@@ -24,5 +24,5 @@
 class ZoneTranslation < ApplicationRecord
   belongs_to :zone
 
-  LOCALES = [:it, :en, :de]
+  LOCALES = [:it, :en, :de, :fr, :nl]
 end
