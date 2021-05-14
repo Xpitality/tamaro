@@ -1,4 +1,4 @@
-FROM public.ecr.aws/bitnami/ruby:2.7 as build-env
+FROM public.ecr.aws/bitnami/ruby:2.6 as build-env
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV HOME /app
@@ -33,13 +33,13 @@ RUN bundle exec rails assets:precompile
 
 # Remove folders not needed in resulting image
 RUN rm -rf node_modules tmp/cache app/assets/images app/assets/stylesheets vendor/assets spec \
-&& rm -rf vendor/bundle/ruby/2.7.0/cache/*.gem \
-&& find vendor/bundle/ruby/2.7.0/gems/ -name "*.c" -delete \
-&& find vendor/bundle/ruby/2.7.0/gems/ -name "*.o" -delete
+&& rm -rf vendor/bundle/ruby/2.6.0/cache/*.gem \
+&& find vendor/bundle/ruby/2.6.0/gems/ -name "*.c" -delete \
+&& find vendor/bundle/ruby/2.6.0/gems/ -name "*.o" -delete
 
 ############### Build step done ###############
 
-FROM public.ecr.aws/bitnami/ruby:2.7-prod
+FROM public.ecr.aws/bitnami/ruby:2.6-prod
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV HOME /app
